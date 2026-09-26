@@ -1,0 +1,116 @@
+.editorContainer {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast);
+}
+
+.editorContainer:focus-within {
+  border-color: var(--border-focus);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 12px;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.toolBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.toolBtn:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.toolBtnActive {
+  background-color: var(--accent-light) !important;
+  color: var(--accent-primary) !important;
+}
+
+.divider {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-color);
+  margin: 0 4px;
+}
+
+.headingSelect {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.contentArea {
+  padding: 20px;
+  min-height: 300px;
+  max-height: 600px;
+  overflow-y: auto;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.contentArea[contenteditable='true']:empty:before {
+  content: attr(placeholder);
+  color: var(--text-muted);
+  font-style: italic;
+  pointer-events: none;
+  display: block;
+}
+
+.contentArea h1 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 16px 0 8px 0;
+}
+
+.contentArea h2 {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 14px 0 6px 0;
+}
+
+.contentArea h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 12px 0 4px 0;
+}
+
+.contentArea ul, .contentArea ol {
+  padding-left: 24px;
+  margin: 8px 0;
+}
+
+.contentArea pre, .contentArea code {
+  background-color: var(--bg-tertiary);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+  font-size: 13px;
+}

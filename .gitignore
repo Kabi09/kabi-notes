@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment files (.env ignored, .env.local and .env.example tracked)
+.env
+.env.*
+!.env.local
+!.env.example
+
+# Local Uploads
+backend/uploads/*
+!backend/uploads/.gitkeep
+
+# Build / Production output
+dist/
+**/dist/
+build/
+
+# IDE / OS files
+.DS_Store
+Thumbs.db
+*.log
