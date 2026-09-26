@@ -54,7 +54,7 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api', apiLimiter);
 
 // Health check endpoint
-app.get('/api/health', (req, res) => {
+app.get(['/api/health', '/health', '/'], (req, res) => {
   res.status(200).json({
     success: true,
     message: 'Kabi Notes API is running smoothly',
@@ -62,10 +62,15 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// API Routes
+// API Routes (supports both /api/auth and /auth endpoints)
 app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
+
 app.use('/api/notes', noteRoutes);
+app.use('/notes', noteRoutes);
+
 app.use('/api/files', fileRoutes);
+app.use('/files', fileRoutes);
 
 // Error Handling Middlewares
 app.use(notFound);
